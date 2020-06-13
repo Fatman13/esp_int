@@ -1,0 +1,182 @@
+"amenities": {
+                    "6176": {
+                        "id": "6176",
+                        "name": "Non-Smoking"
+                    },
+                    "1073744077": {
+                        "id": "1073744077",
+                        "name": "Champagne service"
+                    },
+                    "2034": {
+                        "id": "2034",
+                        "name": "Premium bedding"
+                    },
+                    "2056": {
+                        "id": "2056",
+                        "name": "Turndown service"
+                    },
+                    "1073744675": {
+                        "id": "1073744675",
+                        "name": "Grab bar - near toilet"
+                    },
+                    "1073744237": {
+                        "id": "1073744237",
+                        "name": "Laptop-friendly workspace"
+                    },
+                    "1073744677": {
+                        "id": "1073744677",
+                        "name": "Grab bar - in bathtub"
+                    },
+                    "2030": {
+                        "id": "2030",
+                        "name": "In-room climate control (air conditioning)"
+                    },
+                    "2151": {
+                        "id": "2151",
+                        "name": "In-room childcare (surcharge)"
+                    },
+                    "2150": {
+                        "id": "2150",
+                        "name": "Blackout drapes/curtains"
+                    },
+                    "130": {
+                        "id": "130",
+                        "name": "Refrigerator"
+                    },
+                    "131": {
+                        "id": "131",
+                        "name": "Minibar"
+                    },
+                    "2170": {
+                        "id": "2170",
+                        "name": "Separate bathtub and shower"
+                    },
+                    "132": {
+                        "id": "132",
+                        "name": "Coffee/tea maker"
+                    },
+                    "2405": {
+                        "id": "2405",
+                        "name": "Free wired Internet"
+                    },
+                    "133": {
+                        "id": "133",
+                        "name": "Daily housekeeping"
+                    },
+                    "2403": {
+                        "id": "2403",
+                        "name": "Free WiFi"
+                    },
+                    "135": {
+                        "id": "135",
+                        "name": "Hypo-allergenic bedding available"
+                    },
+                    "136": {
+                        "id": "136",
+                        "name": "Phone"
+                    },
+                    "2026": {
+                        "id": "2026",
+                        "name": "Desk"
+                    },
+                    "2025": {
+                        "id": "2025",
+                        "name": "Designer toiletries"
+                    },
+                    "2081": {
+                        "id": "2081",
+                        "name": "Premium TV channels"
+                    },
+                    "1073743370": {
+                        "id": "1073743370",
+                        "name": "Towels provided"
+                    },
+                    "1073743371": {
+                        "id": "1073743371",
+                        "name": "Linens provided"
+                    },
+                    "1073744661": {
+                        "id": "1073744661",
+                        "name": "Lowered electrical outlets in bathroom"
+                    },
+                    "1073744220": {
+                        "id": "1073744220",
+                        "name": "Baby bath"
+                    },
+                    "4420": {
+                        "id": "4420",
+                        "name": "Connecting/adjoining rooms available"
+                    },
+                    "6147": {
+                        "id": "6147",
+                        "name": "LED TV"
+                    },
+                    "1073744689": {
+                        "id": "1073744689",
+                        "name": "Lever door handles"
+                    },
+                    "2086": {
+                        "id": "2086",
+                        "name": "DVD player"
+                    },
+                    "2162": {
+                        "id": "2162",
+                        "name": "Slippers"
+                    },
+                    "142": {
+                        "id": "142",
+                        "name": "Bathrobes"
+                    },
+                    "143": {
+                        "id": "143",
+                        "name": "Free toiletries"
+                    },
+                    "1": {
+                        "id": "1",
+                        "name": "Air conditioning"
+                    },
+                    "144": {
+                        "id": "144",
+                        "name": "Hair dryer"
+                    },
+                    "145": {
+                        "id": "145",
+                        "name": "Iron/ironing board"
+                    },
+                    "146": {
+                        "id": "146",
+                        "name": "In-room safe"
+                    },
+                    "3502": {
+                        "id": "3502",
+                        "name": "Rainfall showerhead"
+                    },
+                    "1073742816": {
+                        "id": "1073742816",
+                        "name": "Rollaway/extra beds (surcharge)"
+                    },
+                    "3501": {
+                        "id": "3501",
+                        "name": "Deep soaking bathtub"
+                    },
+                    "2015": {
+                        "id": "2015",
+                        "name": "Room service (24 hours)"
+                    },
+                    "128": {
+                        "id": "128",
+                        "name": "Free newspaper"
+                    },
+                    "2057": {
+                        "id": "2057",
+                        "name": "Free bottled water"
+                    },
+                    "2398": {
+                        "id": "2398",
+                        "name": "Cable TV service"
+                    },
+                    "4951": {
+                        "id": "4951",
+                        "name": "Free cribs/infant beds"
+                    }
+                },

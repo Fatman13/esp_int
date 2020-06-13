@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-datepicker3.standalone.min.css">
+
+    <title>+++ EPS Test +++</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <img src="/static/img/EPS-logo-full-color_480x322.png" class="img-fluid" alt="Responsive image">
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Search</h1>
+          <form action="{{ url_for('eps') }}" method="post">
+            <div class="form-group">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="region" id="inlineRadio1" value="New York" {% if 'New York' in data.keys() %}{{ 'checked' }}{% endif %}>
+                <label class="form-check-label" for="inlineRadio1">New York</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="region" id="inlineRadio2" value="Paris" {% if 'Paris' in data.keys() %}{{ 'checked' }}{% endif %}>
+                <label class="form-check-label" for="inlineRadio2">Paris</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="region" id="inlineRadio3" value="London" {% if 'London' in data.keys() %}{{ 'checked' }}{% endif %}>
+                <label class="form-check-label" for="inlineRadio3">London</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="region" id="inlineRadio4" value="Sydney" {% if 'Sydney' in data.keys() %}{{ 'checked' }}{% endif %}>
+                <label class="form-check-label" for="inlineRadio4">Sydney</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="region" id="inlineRadio5" value="Singapore" {% if 'Singapore' in data.keys() %}{{ 'checked' }}{% endif %}>
+                <label class="form-check-label" for="inlineRadio5">Singapore</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Occupancy</label>
+              <select class="form-control" id="exampleFormControlSelect1" name="occupancy">
+                <option>1</option>
+                <option selected>2</option>
+                <option>3</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Checkin">Checkin</label>
+                <!-- <input type="text" class="form-control" id="inputCity"> -->
+                <input type="text" class="form-control datepicker-checkin" id="checkinDate" value="{{data['now'].strftime('%Y-%m-%d')}}" name="checkin_date">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="Checkout">Checkout</label>
+                <input type="text" class="form-control datepicker-checkout" id="checkoutDate" value="{{data['now1'].strftime('%Y-%m-%d')}}" name="checkout_date">
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Ratings</label>
+                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="ratings">
+                  <option {% if data['ratings'] == 'Choose...' %}{{ 'selected' }}{% endif %}>Choose...</option>
+                  <option value="5" {% if data['ratings'] == '5' %}{{ 'selected' }}{% endif %}>5</option>
+                  <option value="4.5" {% if data['ratings'] == '4.5' %}{{ 'selected' }}{% endif %}>4.5</option>
+                  <option value="4" {% if data['ratings'] == '4' %}{{ 'selected' }}{% endif %}>4</option>
+                  <option value="3.5" {% if data['ratings'] == '3.5' %}{{ 'selected' }}{% endif %}>3.5</option>
+                  <option value="3" {% if data['ratings'] == '3' %}{{ 'selected' }}{% endif %}>3</option>
+                  <option value="2.5" {% if data['ratings'] == '2.5' %}{{ 'selected' }}{% endif %}>2.5</option>
+                  <option value="2" {% if data['ratings'] == '2' %}{{ 'selected' }}{% endif %}>2</option>
+                  <option value="1.5" {% if data['ratings'] == '1.5' %}{{ 'selected' }}{% endif %}>1.5</option>
+                  <option value="1" {% if data['ratings'] == '1' %}{{ 'selected' }}{% endif %}>1</option>
+                </select>
+            </div>
+            <div class="form-group">
+              <!-- <label for="exampleFormControlSelect1">Amenities</label> -->
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Non-Smoking" name="amenities">
+                <label class="form-check-label" for="inlineCheckbox1">Non-Smoking</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Spa treatment room(s)" name="amenities">
+                <label class="form-check-label" for="inlineCheckbox2">Spa treatment room(s)</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Blackout drapes/curtains" name="amenities">
+                <label class="form-check-label" for="inlineCheckbox3">Blackout drapes/curtains</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Minibar" name="amenities">
+                <label class="form-check-label" for="inlineCheckbox4">Minibar</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="Free WiFi" name="amenities">
+                <label class="form-check-label" for="inlineCheckbox5">Free WiFi</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="In-room safe" name="amenities">
+                <label class="form-check-label" for="inlineCheckbox6">In-room safe</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="Room service (24 hours)" name="amenities">
+                <label class="form-check-label" for="inlineCheckbox7">Room service (24 hours)</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="Free bottled water" name="amenities">
+                <label class="form-check-label" for="inlineCheckbox8">Free bottled water</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="Cable TV service" name="amenities">
+                <label class="form-check-label" for="inlineCheckbox9">Cable TV service</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="24-hour front desk" name="amenities">
+                <label class="form-check-label" for="inlineCheckbox10">24-hour front desk</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox11" value="Multilingual staff" name="amenities">
+                <label class="form-check-label" for="inlineCheckbox11">Multilingual staff</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox12" value="Elevator" name="amenities">
+                <label class="form-check-label" for="inlineCheckbox12">Elevator</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox13" value="Concierge services" name="amenities">
+                <label class="form-check-label" for="inlineCheckbox13">Concierge services</label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Search Hotels</button>
+          </form>
+        </div>
+        <div class="col-5">
+          <h1>Result</h1>
+          {% if 'no_result' in data.keys() %}
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">No Result Found</h5>
+                <p class="card-text">Please relax your search requirement and try again.</p>
+              </div>
+            </div>
+            <br>
+          {% endif %}
+          {% if 'hotels' in data.keys() %}
+            {% for hotel in data['hotels'] %}
+              <div class="card">
+                <img src="{{ hotel['image1']['links']['350px']['href'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{ hotel['name'] }} {{ hotel['property_id'] }}</h5>
+                  <p class="card-text">{{ hotel['address']['line_1'] }} {{ hotel['address']['city'] }} {{ hotel['address']['postal_code'] }}</p>
+                  <p class="card-text">Ratings: {{ hotel['ratings']['property']['rating'] }} {{ hotel['ratings']['property']['type'] }}</p>
+                  <p class="card-text">Starting from {{ hotel['price'] }} USD</p>
+                  <a href="/eps/{{ hotel['property_id'] }}" class="btn btn-primary">Hotel Details</a>
+                </div>
+              </div>
+              <br>
+            {% endfor %}
+          {% endif %}
+          {% if 'hotel' in data.keys() %}
+            <div class="card">
+              <img src="{{ data['hotel']['image1']['links']['350px']['href'] }}" class="card-img-top" alt="..."><br>
+              <img src="{{ data['hotel']['image2']['links']['350px']['href'] }}" class="card-img-top" alt="..."><br>
+              <img src="{{ data['hotel']['image3']['links']['350px']['href'] }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ data['hotel']['name'] }} {{ data['hotel']['property_id'] }}</h5>
+                <p class="card-text">{{ data['hotel']['address']['line_1'] }} {{ data['hotel']['address']['city'] }} {{ data['hotel']['address']['postal_code'] }}</p>
+                <p class="card-text">Ratings: {{ data['hotel']['ratings']['property']['rating'] }} {{ data['hotel']['ratings']['property']['type'] }}</p>
+                <p class="card-text">Phone: {{ data['hotel']['phone'] }}</p>
+                <p class="card-text">Checkin from {{ data['hotel']['checkin']['begin_time'] }} to {{ data['hotel']['checkin']['end_time'] }}</p>
+                <p class="card-text">Checkout {{ data['hotel']['checkout']['time'] }}</p>
+                <p class="card-text">Amenities: 
+                  {% for amenity in data['hotel']['amenities'].keys() %}
+                    {{ data['hotel']['amenities'][amenity]['name'] + ' | ' }} 
+                  {% endfor %}
+                </p>
+              </div>
+              <ul class="list-group list-group-flush">
+                {% for room in data['hotel']['rooms'].keys() %}
+                  <li class="list-group-item">Room_id: {{ data['hotel']['rooms'][room]['id'] }} / Name: {{ data['hotel']['rooms'][room]['name'] }} / Description: {{ data['hotel']['rooms'][room]['descriptions']['overview'] }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+        <div class="col">
+          <h1>Request</h1>
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">API Key</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="1">{% if 'api_key' in data.keys() %}{{ data['api_key'] }}{% endif %}</textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Shared Secret</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="1">{% if 'shared_secret' in data.keys() %}{{ data['shared_secret'] }}{% endif %}</textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Authorization</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="5">{% if 'auth_header' in data.keys() %}{{ data['auth_header'] }}{% endif %}</textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Request</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="27">{% if 'request' in data.keys() %}{{ data['request'] }}{% endif %}</textarea>
+            </div>
+            <!-- <div class="form-group row">
+              <label for="staticEmail" class="col-sm-2 col-form-label">API Key</label>
+              <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="1m6lfng9fqd5fkv57r1c0cms70">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="staticEmail" class="col-sm-2 col-form-label">Shared Secret</label>
+              <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="60mdjb6pisd5u">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="staticEmail" class="col-sm-2 col-form-label">Authorization</label>
+              <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="EAN APIKey=1m6lfng9fqd5fkv57r1c0cms70,Signature=d1706b9352ac5e78c3fac39d05daaae9d3c1b83d3a97c418ce2514f0dbc581b5b985571d2d23e29d4c36345a6913c229a326d0db11335333c1236d79ad042ff2,timestamp=1582785249">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="staticEmail" class="col-sm-2 col-form-label">Request</label>
+              <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="https://api.ean.com/2.4/properties/availability?checkin=2020-03-13&checkout=2020-03-14&currency=USD&language=en-US&country_code=US&occupancy=2&sales_channel=website&sales_environment=hotel_only&filter=refundable&rate_plan_count=1&property_id=28540">
+              </div>
+            </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/static/bootstrap-4.4.1-dist/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="/static/bootstrap-4.4.1-dist/js/popper.min.js"></script>
+    <script src="/static/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript">
+      $('.datepicker-checkin').datepicker({
+          format: 'yyyy-mm-dd',
+          startDate: '1d'
+      });
+      $('.datepicker-checkout').datepicker({
+          format: 'yyyy-mm-dd',
+          startDate: '2d'
+      });
+    </script>
+  </body>
+</html>
